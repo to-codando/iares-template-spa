@@ -1,4 +1,4 @@
-export const resolveEnvironment = ({ environment }) => ({
+export default ({ environment }) => ({
   name: "env",
   setup(build) {
     // Intercept import paths called "env" so esbuild doesn't attempt

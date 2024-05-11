@@ -1,4 +1,4 @@
-import { environment } from "env";
+import environment from "env";
 import { createApp, html, render, router } from "iares";
 
 import { AppMain } from "@/components/AppMain";

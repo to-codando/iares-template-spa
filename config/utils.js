@@ -1,3 +1,5 @@
+import { glob } from "glob";
+
 export const timer = () => {
   let time = 0;
   let counter = null;
@@ -13,4 +15,12 @@ export const timer = () => {
   const stop = () => clearTimeout(counter);
 
   return { start, stop, log };
+};
+
+
+
+
+export const getFiles = async (directory, ignore = null) => {
+  const files = await glob(directory, { ignore: ignore });
+  return files;
 };

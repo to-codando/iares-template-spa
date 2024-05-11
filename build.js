@@ -6,7 +6,7 @@ import copy from "esbuild-copy-static-files";
 import aliasPlugin from "esbuild-plugin-path-alias";
 import { dTSPathAliasPlugin } from 'esbuild-plugin-d-ts-path-alias';
 
-import  resolveEnvironment  from "./config/plugins/env.js";
+import resolveEnvironment from "./config/plugins/env.js";
 import { getFiles } from "./config/utils.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -33,13 +33,13 @@ const runBuild = async () => {
 
     external: ["http", "canvas", "global-jsdom", "global-jsdom/register"],
     treeShaking: ISPRODMODE ? true : false,
-    sourcemap: ISPRODMODE ? false : true,
+    sourcemap: ISPRODMODE ? false : "both",
     minify: ISPRODMODE ? true : false,
     target: ISPRODMODE ? ["ES2022"] : ["ESNEXT"],
 
     plugins: [
-      resolveEnvironment({ 
-        environment:  process.env.NODE_ENV 
+      resolveEnvironment({
+        environment: process.env.NODE_ENV
       }),
       copy({
         src: resolve(__dirname, "./public"),
@@ -72,16 +72,16 @@ const runBuild = async () => {
   try {
     const ctx = await context(config);
 
-    if(ISTESTMODE) {
+    if (ISTESTMODE) {
       ctx.rebuild()
       return
     }
 
-    if(ISDEVMOD) {
+    if (ISDEVMOD) {
       const { port } = await ctx.serve({
-      port: PORT,
-      servedir: "./dist",
-    });
+        port: PORT,
+        servedir: "./dist",
+      });
 
       await ctx.watch();
       console.log(`server running in localhost:${port}`);

@@ -65,6 +65,7 @@
     "esbuild": "^0.17.19",
     "esbuild-copy-static-files": "^0.1.0",
     "esbuild-plugin-d-ts-path-alias": "^4.2.0",
+    "esbuild-plugin-dev-server": "^4.0.0",
     "esbuild-plugin-path-alias": "^1.0.7",
     "glob": "^9.3.5",
     "global-jsdom": "^8.8.0",

@@ -4,9 +4,10 @@ import { fileURLToPath } from "url";
 import { context, build } from "esbuild";
 import copy from "esbuild-copy-static-files";
 import aliasPlugin from "esbuild-plugin-path-alias";
-import { dTSPathAliasPlugin } from 'esbuild-plugin-d-ts-path-alias';
+import { dTSPathAliasPlugin } from "esbuild-plugin-d-ts-path-alias";
 
 import resolveEnvironment from "./config/plugins/env.js";
+import { onRebuild } from "./config/plugins/onRebuild/index.js";
 import { getFiles } from "./config/utils.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,10 +17,10 @@ const runBuild = async () => {
   const PORT = +process.env.PORT || 6000;
   const ISPRODMODE = process.env.NODE_ENV === "production";
   const ISDEVMOD = process.env.NODE_ENV === "development";
-  const ISTESTMODE = process.env.TEST_ENV === true
+  const ISTESTMODE = process.env.TEST_ENV === true;
   const SOURCES = await getFiles("./src/**/*.ts");
 
-  console.log("Updated Files:\n", SOURCES)
+  console.log("Updated Files:\n", SOURCES);
 
   const config = {
     bundle: true,
@@ -39,7 +40,7 @@ const runBuild = async () => {
 
     plugins: [
       resolveEnvironment({
-        environment: process.env.NODE_ENV
+        environment: process.env.NODE_ENV,
       }),
       copy({
         src: resolve(__dirname, "./public"),
@@ -48,7 +49,7 @@ const runBuild = async () => {
       }),
       dTSPathAliasPlugin({
         tsconfigPath: "./tsconfig.json",
-        debug: false
+        debug: false,
       }),
       aliasPlugin({
         "@/store": resolve(__dirname, "./src/store/index"),
@@ -58,6 +59,7 @@ const runBuild = async () => {
         "@/assets": resolve(__dirname, "./public/assets"),
         "@/mock": resolve(__dirname, "./src/mock/"),
       }),
+      onRebuild(),
     ],
 
     loader: {
@@ -73,8 +75,8 @@ const runBuild = async () => {
     const ctx = await context(config);
 
     if (ISTESTMODE) {
-      ctx.rebuild()
-      return
+      ctx.rebuild();
+      return;
     }
 
     if (ISDEVMOD) {
@@ -86,12 +88,10 @@ const runBuild = async () => {
       await ctx.watch();
       console.log(`server running in localhost:${port}`);
 
-      return
+      return;
     }
 
-    build(config)
-
-
+    build(config);
   } catch (errors) {
     console.log(errors);
     process.exit(0);

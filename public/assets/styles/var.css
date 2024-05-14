@@ -182,7 +182,7 @@
   --fam-button-height: 50px;
   --fam-button-justify-content: center;
   --fam-button-align-items: center;
-  --fam-button-font-weight: 600;
+  --fam-button-font-weight: 400;
   --fam-buttom-border-width: 1px;
   --fam-buttom-border-style: solid;
   --fam-button-font-size: 1em;
@@ -190,14 +190,15 @@
 
 
   /* primary */
-  --fam-buttom-primary-text-color: #fff;
-  --fam-buttom-primary-background: #1d44ba;
-  --fam-buttom-primary-border-color: #1d44ba;
+  --fam-buttom-primary-text-color: #8ac5fb;
+  --fam-buttom-primary-color: #8ac5fb;
+  --fam-buttom-primary-background: #0084FF;
+  --fam-buttom-primary-border-color: #2797FF;
 
   /* primary Disabled*/
   --fam-buttom-primary-disabled-text-color: #143187;
-  --fam-buttom-primary-disabled-background: #d8e1fb;
-  --fam-buttom-primary-disabled-border-color: #143187;
+  --fam-buttom-primary-disabled-background: #0084FF;
+  --fam-buttom-primary-disabled-border-color: #2797FF;
 
   /* primary  Hole*/
   --fam-buttom-primary-hole-text-color: #143187;

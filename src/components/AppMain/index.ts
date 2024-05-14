@@ -1,4 +1,4 @@
-import { css, html } from "iares";
+import { css, html } from "iares"
 
 const template = () => html`
   <div class="wrap-ctx">
@@ -9,7 +9,7 @@ const template = () => html`
 export const AppMain = () => {
   return {
     template,
-    styles,
+    styles
   };
 };
 

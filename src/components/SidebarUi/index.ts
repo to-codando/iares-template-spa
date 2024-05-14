@@ -1,20 +1,32 @@
-import { html, css } from "iares"
-import { AvatarUi } from "./AvatarUi"
+import { html, css } from "iares";
+import { AvatarUi } from "./AvatarUi";
+import { MenuLinkUi } from "./MenuLinkUi";
+import { LogoutUi } from "./LogoutUi";
 
 const template = () => html`
   <div class="avatar-ctx">
-    <${AvatarUi} />
+    <slot> <${AvatarUi}/></slot> 
   </div>
-  <div class="links-ctx">links</div>
-  <div class="logout-ctx">logout</div>
-`
+  <div class="links-ctx">
+    <${MenuLinkUi}  icon="newsstand"       label="Projetos"        route="projects"                      /> 
+    <${MenuLinkUi}  icon="data_object"     label="Objetivos"       route="targets"    highlight=${true}  /> 
+    <${MenuLinkUi}  icon="move_up"         label="Fases"           route="levels"                        /> 
+    <${MenuLinkUi}  icon="event_list"      label="Tarefas"         route="tasks"                         /> 
+    <${MenuLinkUi}  icon="bookmark"        label="Tags"            route="tags"                          /> 
+    <${MenuLinkUi}  icon="account_box"     label="Usuários"        route="users"                         /> 
+    <${MenuLinkUi}  icon="tune"            label="Configurações"   route="settings"                      /> 
+  </div>
+  <div class="logout-ctx">
+    <${LogoutUi} />
+  </div>
+`;
 
 export const SidebarUi = () => {
   return {
     template,
-    styles
-  }
-}
+    styles,
+  };
+};
 
 const styles = () => css`
   sidebar-ui {
@@ -28,7 +40,6 @@ const styles = () => css`
   }
 
   .avatar-ctx,
-  .links-ctx,
   .logout-ctx {
     padding:0 1em;
   }
@@ -48,4 +59,4 @@ const styles = () => css`
   .logout-ctx {
     grid-area: logout
   }
-`
+`;

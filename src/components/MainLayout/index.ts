@@ -1,22 +1,25 @@
 import { css, html } from "iares";
 
 import { SidebarUi } from "@/components/SidebarUi";
+import { HeaderUi } from "../HeaderUi";
 
 const template = () => html`
 <div class="sidebar-ctx">
   <${SidebarUi} />
 </div>
-<div class="header-ctx">header</div>
+<div class="header-ctx">
+  <${HeaderUi} />
+</div>
 <div class="content-ctx">
   <router-view></router-view>
 </div>
 `;
 
 export const MainLayout = () => {
-	return {
-		template,
-		styles,
-	};
+  return {
+    template,
+    styles,
+  };
 };
 
 const styles = () => css`

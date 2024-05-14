@@ -10,14 +10,14 @@ const template = () => html`
 <div class="content-ctx">
   <router-view></router-view>
 </div>
-`
+`;
 
 export const MainLayout = () => {
-  return {
-    template,
-    styles
-  }
-}
+	return {
+		template,
+		styles,
+	};
+};
 
 const styles = () => css`
   main-layout {
@@ -41,4 +41,4 @@ const styles = () => css`
   }
 
   
-`
+`;

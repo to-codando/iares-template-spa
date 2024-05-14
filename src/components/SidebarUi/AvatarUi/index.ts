@@ -3,11 +3,11 @@ import { css, html } from "iares";
 
 const template = () => html`
   <div class="avatar-image-ctx">
-    <${FamAvatar} 
-      src="/assets/images/avatar.png" 
+    <${FamAvatar}
+      src="/assets/images/avatar.png"
       fallbackSrc="/assets/images/404.png"
       size="3"
-      alt="avatar" 
+      alt="avatar"
     />
   </div>
 

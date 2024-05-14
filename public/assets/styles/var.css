@@ -1,18 +1,17 @@
 :root {
-  --black-light: #505A59;
-  --black-power: #212C2E;
+  --black-light: #505a59;
+  --black-power: #212c2e;
   --black-soft: #263538;
-  --green-bluish-light: #DCF4F8;
-  --green-bright: #5DDABC;
-  --green-moss: #818B88;
-  --green-smooth: #76ADAD;
-  --green-soft: #CBF3E9;
-  --green-soft-light: #DBF4EE;
-  --green-super-light: #CCDBD7;
-  --light-grey: #EEF4F3;
-  --red-soft: #EC7B7B;
-  --white: #FFFFFF;
-
+  --green-bluish-light: #dcf4f8;
+  --green-bright: #5ddabc;
+  --green-moss: #818b88;
+  --green-smooth: #76adad;
+  --green-soft: #cbf3e9;
+  --green-soft-light: #dbf4ee;
+  --green-super-light: #ccdbd7;
+  --light-grey: #eef4f3;
+  --red-soft: #ec7b7b;
+  --white: #ffffff;
 
   --blue-1: #214ed3;
   --blue-2: #315ad2;
@@ -145,10 +144,10 @@
 
   /*TextInput*/
 
-  --text-input-text-color: var(--white-3);
-  --text-input-background: #0a0910;
+  --text-input-text-color: #666;
+  --text-input-background: #fff;
 
-  --text-input-border-color: #303245;
+  --text-input-border-color: #ebebeb;
   --text-input-border-width: 1px;
   --text-input-border-style: solid;
   --text-input-border-radius: var(--border-primary);
@@ -188,28 +187,27 @@
   --fam-button-font-size: 1em;
   --fam-button-border-radius: 8px;
 
-
   /* primary */
   --fam-buttom-primary-text-color: #8ac5fb;
   --fam-buttom-primary-color: #8ac5fb;
-  --fam-buttom-primary-background: #0084FF;
-  --fam-buttom-primary-border-color: #2797FF;
+  --fam-buttom-primary-background: #0084ff;
+  --fam-buttom-primary-border-color: #2797ff;
 
   /* primary Disabled*/
   --fam-buttom-primary-disabled-text-color: #143187;
-  --fam-buttom-primary-disabled-background: #0084FF;
-  --fam-buttom-primary-disabled-border-color: #2797FF;
+  --fam-buttom-primary-disabled-background: #0084ff;
+  --fam-buttom-primary-disabled-border-color: #2797ff;
 
   /* primary  Hole*/
-  --fam-buttom-primary-hole-text-color: #143187;
+  --fam-buttom-primary-hole-color: #fff;
+  --fam-buttom-primary-hole-text-color: #fff;
   --fam-buttom-primary-hole-background: none;
-  --fam-buttom-primary-hole-border-color: #143187;
+  --fam-buttom-primary-hole-border-color: #2797ff;
 
   /* primary Hole Disabled*/
   --fam-buttom-primary-hole-disabled-text-color: #d8e1fb;
   --fam-buttom-primary-hole-disabled-background: none;
   --fam-buttom-primary-hole-disabled-border-color: #d8e1fb;
-
 
   /* secondary */
   --fam-buttom-secondary-text-color: #fff;
@@ -231,12 +229,11 @@
   --fam-buttom-secondary-hole-disabled-background: none;
   --fam-buttom-secondary-hole-disabled-border-color: #edd4e1;
 
-
   /* tertiary */
   --fam-buttom-tertiary-text-color: #14877f;
   --fam-buttom-tertiary-background: #8cf1c0;
   --fam-buttom-tertiary-border-color: #14877f;
-  
+
   /* tertiary Disabled*/
   --fam-buttom-tertiary-disabled-text-color: #8cb5a1;
   --fam-buttom-tertiary-disabled-background: #ddeee6;
@@ -249,9 +246,8 @@
 
   /* tertiary Hole Disabled*/
   --fam-buttom-tertiary-hole-disabled-text-color: #8cb5a1;
-  --fam-buttom-tertiary-hole-disabled-background:none;
+  --fam-buttom-tertiary-hole-disabled-background: none;
   --fam-buttom-tertiary-hole-disabled-border-color: #8cb5a1;
-
 
   /* List */
 

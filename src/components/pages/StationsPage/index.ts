@@ -28,7 +28,7 @@ const template = ({ props, state, actions }: Params) => html`
   />
 `;
 
-export const ProjectsPage = ({ props }: Params) => {
+export const StationsPage = ({ props }: Params) => {
   const state = createState<CardData>({
     data: [
       {

@@ -8,17 +8,8 @@ const template = () => html`
     <slot> <${AvatarUi} /></slot>
   </div>
   <div class="links-ctx">
-    <${MenuLinkUi} icon="newsstand" label="Projetos" route="projetos" />
-    <${MenuLinkUi}
-      icon="data_object"
-      label="Objetivos"
-      route="home"
-      highlight=${true}
-    />
-    <${MenuLinkUi} icon="move_up" label="Fases" route="levels" />
-    <${MenuLinkUi} icon="event_list" label="Tarefas" route="tasks" />
-    <${MenuLinkUi} icon="bookmark" label="Tags" route="tags" />
-    <${MenuLinkUi} icon="account_box" label="Usuários" route="users" />
+    <${MenuLinkUi} icon="newsstand" label="Estações" route="stations" />
+    <${MenuLinkUi} icon="account_box" label="Perfil" route="profile" />
     <${MenuLinkUi} icon="tune" label="Configurações" route="settings" />
   </div>
   <div class="logout-ctx">

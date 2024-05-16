@@ -16,7 +16,7 @@ const template = ({ props }: Params) => html`
   />
 `;
 
-export const HomePageUi = ({ props }: Params) => {
+export const StationDetailPage = ({ props }: Params) => {
   return {
     template,
     styles,

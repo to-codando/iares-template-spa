@@ -1,8 +1,8 @@
 import { html, render } from "iares";
 import type { TRoute } from "iares";
 
-import { HomePageUi } from "@/components/pages/HomePage";
-import { ProjectsPage } from "@/components/pages/ProjectsPage";
+import { StationDetailPage } from "@/components/pages/StationDetailPage";
+import { StationsPage } from "@/components/pages/StationsPage";
 import { DefaultPage } from "@/components/pages/DefaultPage";
 
 export const routes: TRoute[] = [
@@ -14,17 +14,20 @@ export const routes: TRoute[] = [
     },
   },
   {
-    regex: /^#\/$|^#\/home$/,
+    regex: /^#\/$|^#\/stations$/,
     start: "#/",
     mount: ({ context }) => {
-      render(html`<${HomePageUi} title="Home" />`, context);
+      render(html`<${StationsPage} title="Estações" />`, context);
     },
   },
   {
-    regex: /^#\/$|^#\/projetos$/,
+    regex: /^#\/stations\/\d+$/,
     start: "#/",
     mount: ({ context }) => {
-      render(html`<${ProjectsPage} title="Projetos" />`, context);
+      render(
+        html`<${StationDetailPage} title="Detalhes da estação" />`,
+        context,
+      );
     },
   },
 ];

@@ -4,9 +4,8 @@ export const onRebuild = () => {
     setup(build) {
       let count = 0;
       build.onEnd((result) => {
-        if (count++ === 0) return;
-        const time = new Date();
-        console.log(`rebuilded: ${time}`);
+        if (count++ < 1) return;
+        console.log(`builded: ${Date.now()}`);
       });
     },
   };

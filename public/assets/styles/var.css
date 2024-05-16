@@ -69,8 +69,8 @@
   --text-size-2: 0.75em;
   --text-size-3: 0.875em;
   --text-size-4: 1em;
-  --text-size-5: 2em;
-  --text-size-6: 3em;
+  --text-size-5: 1.5em;
+  --text-size-6: 2em;
   --text-size-7: 4em;
   --text-size-8: 5em;
   --text-size-9: 6em;
@@ -81,19 +81,19 @@
   /*Title*/
 
   --title-font-size-primary: var(--text-size-5);
-  --title-font-weight-primary: bold;
+  --title-font-weight-primary: 500;
 
-  --title-font-size-secondary: calc(var(--text-size-5) - 0.75em);
+  --title-font-size-secondary: calc(var(--text-size-6) - 0.75em);
   --title-font-weight-secondary: 500;
 
   --title-font-size-tertiary: var(--title-size-3);
   --title-font-weight-tertiary: 500;
 
-  --title-justify-content: center;
-  --title-align-items: center;
-  --title-text-align: center;
+  --title-justify-content: flex-start;
+  --title-align-items: flex-start;
+  --title-text-align: left;
 
-  --title-color: #fff;
+  --title-color: #8f98b5;
 
   /*TAGLINE */
   --fam-tagline-color: #7a90ba;

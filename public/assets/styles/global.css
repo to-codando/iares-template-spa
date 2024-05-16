@@ -2,21 +2,42 @@
 *::before,
 *::after,
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   display: flex;
   width: 100%;
   height: auto;
-  min-height:100vh;
-  background: var(--light-grey)
+  min-height: 100vh;
+  background: var(--light-grey);
+  overflow: hidden;
 }
 
 router-view {
   /* display: flex;
   flex-wrap: wrap;
   width:100%; */
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #52abff;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #66b5ff;
 }
 
 @media (max-width: 1080px) {

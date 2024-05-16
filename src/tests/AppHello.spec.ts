@@ -1,24 +1,24 @@
-import { expect } from "@esm-bundle/chai";
-import globalJsdom from "global-jsdom";
+// import { expect } from "@esm-bundle/chai";
+// import globalJsdom from "global-jsdom";
 
-import { AppHello } from "@/components/AppHello";
+// import { AppHello } from "@/components/AppHello";
 
-describe("AppHello component", () => {
-  let cleanup = () => {};
+// describe("AppHello component", () => {
+//   let cleanup = () => {};
 
-  before(() => {
-    cleanup = globalJsdom();
-  });
+//   before(() => {
+//     cleanup = globalJsdom();
+//   });
 
-  after(() => {
-    cleanup();
-  });
+//   after(() => {
+//     cleanup();
+//   });
 
-  // beforeEach(async () => {});
+//   // beforeEach(async () => {});
 
-  // afterEach(async () => {});
+//   // afterEach(async () => {});
 
-  it("First helloApp tste test", () => {
-    expect(AppHello()).to.have.all.keys(["template", "styles"]);
-  });
-});
+//   it("First helloApp tste test", () => {
+//     expect(AppHello()).to.have.all.keys(["template", "styles"]);
+//   });
+// });

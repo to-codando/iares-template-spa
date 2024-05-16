@@ -4,15 +4,15 @@ import { SidebarUi } from "@/components/SidebarUi";
 import { HeaderUi } from "../HeaderUi";
 
 const template = () => html`
-<div class="sidebar-ctx">
-  <${SidebarUi} />
-</div>
-<div class="header-ctx">
-  <${HeaderUi} />
-</div>
-<div class="content-ctx">
-  <router-view></router-view>
-</div>
+  <div class="sidebar-ctx">
+    <${SidebarUi} />
+  </div>
+  <div class="header-ctx">
+    <${HeaderUi} />
+  </div>
+  <div class="content-ctx">
+    <router-view></router-view>
+  </div>
 `;
 
 export const MainLayout = () => {
@@ -24,7 +24,7 @@ export const MainLayout = () => {
 
 const styles = () => css`
   main-layout {
-    display:grid;
+    display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-rows: 75px 1fr;
     grid-template-areas: "sidebar header" "sidebar content";
@@ -41,7 +41,6 @@ const styles = () => css`
 
   .content-ctx {
     grid-area: content;
+    background: #ddeeff;
   }
-
-  
 `;

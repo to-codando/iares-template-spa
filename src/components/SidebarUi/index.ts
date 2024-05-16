@@ -5,16 +5,21 @@ import { LogoutUi } from "./LogoutUi";
 
 const template = () => html`
   <div class="avatar-ctx">
-    <slot> <${AvatarUi}/></slot> 
+    <slot> <${AvatarUi} /></slot>
   </div>
   <div class="links-ctx">
-    <${MenuLinkUi}  icon="newsstand"       label="Projetos"        route="projects"                      /> 
-    <${MenuLinkUi}  icon="data_object"     label="Objetivos"       route="targets"    highlight=${true}  /> 
-    <${MenuLinkUi}  icon="move_up"         label="Fases"           route="levels"                        /> 
-    <${MenuLinkUi}  icon="event_list"      label="Tarefas"         route="tasks"                         /> 
-    <${MenuLinkUi}  icon="bookmark"        label="Tags"            route="tags"                          /> 
-    <${MenuLinkUi}  icon="account_box"     label="Usuários"        route="users"                         /> 
-    <${MenuLinkUi}  icon="tune"            label="Configurações"   route="settings"                      /> 
+    <${MenuLinkUi} icon="newsstand" label="Projetos" route="projetos" />
+    <${MenuLinkUi}
+      icon="data_object"
+      label="Objetivos"
+      route="home"
+      highlight=${true}
+    />
+    <${MenuLinkUi} icon="move_up" label="Fases" route="levels" />
+    <${MenuLinkUi} icon="event_list" label="Tarefas" route="tasks" />
+    <${MenuLinkUi} icon="bookmark" label="Tags" route="tags" />
+    <${MenuLinkUi} icon="account_box" label="Usuários" route="users" />
+    <${MenuLinkUi} icon="tune" label="Configurações" route="settings" />
   </div>
   <div class="logout-ctx">
     <${LogoutUi} />
@@ -30,33 +35,33 @@ export const SidebarUi = () => {
 
 const styles = () => css`
   sidebar-ui {
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 75px 1fr 75px;
     grid-template-areas: "avatar" "links" "logout";
-    width:100%;
-    height:100%;
-    background:#0084FF;
+    width: 100%;
+    height: 100%;
+    background: #0084ff;
   }
 
   .avatar-ctx,
   .logout-ctx {
-    padding:0 1em;
+    padding: 0 1em;
   }
 
   .avatar-ctx {
-    display:flex;
+    display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     grid-area: avatar;
-    background:#006BCF;
+    background: #006bcf;
   }
 
   .links-ctx {
-    grid-area: links
+    grid-area: links;
   }
 
   .logout-ctx {
-    grid-area: logout
+    grid-area: logout;
   }
 `;

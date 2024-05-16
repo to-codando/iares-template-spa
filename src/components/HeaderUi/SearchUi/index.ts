@@ -6,7 +6,7 @@ const template = () => html`
     type="text"
     label=""
     handler=${() => console.log("ok")}
-    value="Juan Valdez"
+    value="procurar por..."
     debounceTime="500"
   />
 `;
@@ -27,7 +27,7 @@ const styles = () => css`
   search-ui input {
     background: #118cff !important;
     border-color: #2797ff !important;
-    color: #fff !important;
+    color: #bcdfff !important;
   }
 
   search-ui input:focus {

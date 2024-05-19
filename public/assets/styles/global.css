@@ -11,7 +11,6 @@ body {
   height: auto;
   min-height: 100vh;
   background: var(--light-grey);
-  overflow: hidden;
 }
 
 router-view {
@@ -38,6 +37,29 @@ router-view {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #66b5ff;
+}
+
+fam-button [type="secondary-hole-disabled"] {
+  background: #f9f9f9 !important;
+  transition: ease-in 0.2s;
+  font-size: 1.2em;
+}
+fam-button [type="secondary-hole-disabled"]:hover {
+  background: #ff4470 !important;
+  color: #ffd4de;
+}
+
+fam-button [type="primary"] {
+  transition: ease-in 0.2s;
+}
+
+fam-button [type="primary"]:hover {
+  background: #0084ff !important;
+  color: #cdedff;
+}
+
+fam-text-input span {
+  margin: 0 !important;
 }
 
 @media (max-width: 1080px) {

@@ -1,6 +1,6 @@
 import { environment } from "env";
 import { createApp, html, render, router } from "iares";
-import { MainLayout } from "@/components/MainLayout";
+import { MainLayout } from "@/components/layouts";
 import { routes } from "./routes";
 
 export const appHost = createApp({
@@ -11,6 +11,7 @@ export const appHost = createApp({
 });
 
 if (environment === "development") {
-  new EventSource('/esbuild').addEventListener('change', () => location.reload());
+  new EventSource("/esbuild").addEventListener("change", () =>
+    location.reload(),
+  );
 }
-

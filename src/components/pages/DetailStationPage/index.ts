@@ -19,7 +19,7 @@ const template = ({ props }: Params) => html`
       <div class="wrap-ctx">
         <${PageLayoutTitle} title=${props.title} />
         <${PageLayoutContent}>
-          <p class="message-ctx">Página não encontrada</p>
+          <p class="message-ctx">Confira aqui os detalhes da estação</p>
         </>
         
       </div>
@@ -27,7 +27,7 @@ const template = ({ props }: Params) => html`
   </>
 `;
 
-export const DefaultPage = ({ props }: Params) => {
+export const DetailStationPage = ({ props }: Params) => {
   return {
     template,
     styles,
@@ -36,14 +36,7 @@ export const DefaultPage = ({ props }: Params) => {
 };
 
 const styles = () => css`
-  default-page,
-  .wrap-ctx {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .message-ctx {
+  home-page-ui {
     display: flex;
     width: 100%;
   }

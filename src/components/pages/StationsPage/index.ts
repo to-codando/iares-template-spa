@@ -1,95 +1,111 @@
 import { css, html, createState } from "iares";
-import { MainPageLayout } from "../layouts/Main";
-import { CardUi } from "@/components/CardUi";
+
+import type { Stations, Params } from "./types";
+import { createActions } from "./actions";
+
+import { StationsGroup } from "@/components/StationsPage/StationsGroup";
 import {
-  type CardData,
-  type CardValue,
-  type Actions,
-  createActions,
-} from "./actions";
-
-type Props = {
-  title: string;
-};
-
-type Params = {
-  props: Props;
-  actions: Actions;
-  state: CardData;
-};
+  PageLayout,
+  PageLayoutTitle,
+  PageLayoutContent,
+} from "@/components/layouts";
 
 const template = ({ props, state, actions }: Params) => html`
-  <${MainPageLayout}
-    title=${props.title}
-    body=${actions.repeat(
-      state,
-      (value: CardValue) => html`<${CardUi} data=${value} />`,
-    )}
-  />
+
+  <${PageLayout}>
+    <slot target="pageLayout" ctx="stations-page">
+      <div class="wrap-ctx">
+        <${PageLayoutTitle} title=${props.title}/>
+        <${PageLayoutContent}>
+          <${StationsGroup} values=${state.stations} />      
+        </>
+      </div>
+    </slot>
+  </> 
 `;
 
 export const StationsPage = ({ props }: Params) => {
-  const state = createState<CardData>({
-    data: [
+  const state = createState<Stations>({
+    stations: [
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 1,
+        text: "Estação de recarga 1",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 2,
+        text: "Estação de recarga 2",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 3,
+        text: "Estação de recarga 3",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 4,
+        text: "Estação de recarga 4",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 5,
+        text: "Estação de recarga 5",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 6,
+        text: "Estação de recarga 6",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 7,
+        text: "Estação de recarga 7",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 8,
+        text: "Estação de recarga 8",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 9,
+        text: "Estação de recarga 9",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 10,
+        text: "Estação de recarga 10",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 11,
+        text: "Estação de recarga 11",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 12,
+        text: "Estação de recarga 12",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 13,
+        text: "Estação de recarga 13",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 14,
+        text: "Estação de recarga 14",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 15,
+        text: "Estação de recarga 15",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 16,
+        text: "Estação de recarga 16",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 17,
+        text: "Estação de recarga 17",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 18,
+        text: "Estação de recarga 18",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 19,
+        text: "Estação de recarga 19",
       },
       {
-        description: "Card do sistema visível no app em colunas",
+        id: 20,
+        text: "Estação de recarga 20",
       },
     ],
   });
@@ -101,12 +117,15 @@ export const StationsPage = ({ props }: Params) => {
     styles,
     state,
     actions,
+    props,
   };
 };
 
 const styles = () => css`
-  home-page-ui {
+  home-page-ui,
+  .wrap-ctx {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
   }
 `;

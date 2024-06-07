@@ -1,9 +1,9 @@
-import { css, html } from "iares";
+import { css, html } from 'iares';
 import {
   PageLayout,
   PageLayoutTitle,
   PageLayoutContent,
-} from "@/components/layouts";
+} from '@/components/layouts';
 
 type Props = {
   title: string;

@@ -1,16 +1,16 @@
-import { css, html, createState } from "iares";
+import {css, html, createState} from "iares";
 
-import type { Stations, Params } from "./types";
-import { createActions } from "./actions";
+import type {Stations, Params} from "./types";
+import {createActions} from "./actions";
 
-import { StationsGroup } from "@/components/StationsPage/StationsGroup";
+import {StationsGroup} from "@/components/pages/StationsPage/StationsGroup";
 import {
   PageLayout,
   PageLayoutTitle,
   PageLayoutContent,
 } from "@/components/layouts";
 
-const template = ({ props, state, actions }: Params) => html`
+const template = ({props, state, actions}: Params) => html`
 
   <${PageLayout}>
     <slot target="pageLayout" ctx="stations-page">
@@ -24,7 +24,7 @@ const template = ({ props, state, actions }: Params) => html`
   </> 
 `;
 
-export const StationsPage = ({ props }: Params) => {
+export const StationsPage = ({props}: Params) => {
   const state = createState<Stations>({
     stations: [
       {

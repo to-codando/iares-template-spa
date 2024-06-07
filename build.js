@@ -64,6 +64,8 @@ const runBuild = async () => {
 
     loader: {
       ".js": "ts",
+      '.js'  :  'jsx',
+      '.ts'  :  'tsx',
       ".png": "dataurl",
       ".jpg": "file",
       ".jpeg": "file",

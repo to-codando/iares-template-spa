@@ -1,11 +1,11 @@
-import { createState } from "iares";
-import { createActions } from "./actions";
-import type { StoreType } from "./types";
+import { createState } from 'iares'
+import { createActions } from './actions'
+import type { StoreType } from './types'
 
 const store = createState<StoreType>({
-  text: "Hello world",
-});
+  text: 'Hello world'
+})
 
-const actions = createActions(store);
+const actions = createActions(store)
 
-export { store, actions };
+export { store, actions }

@@ -1,17 +1,17 @@
-import { FamButton, FamTextInput } from "fam-code-ui";
-import { createState, css, html } from "iares";
-import { createActions } from "./actions";
-import type { Params } from "./types";
-import { createHooks } from "./hooks";
+import {FamButton, FamTextInput} from "fam-code-ui";
+import {createState, css, html} from "iares";
+import {createActions} from "./actions";
+import type {Params} from "./types";
+import {createHooks} from "./hooks";
 
-const template = ({ props, state, actions }: Params) => html`
+const template = ({state, actions}: Params) => html`
 <div class="wrap-ctx">
   <div class="grid grid-cols-12">
     <div class="xxl-col-12">
       <${FamTextInput}  
         type="text"
         label="Nova estação"
-        handler=${props?.onChange?.()}
+        handler=${() => {}}
         value=${state.value}
         debounceTime="500"
       />
@@ -19,7 +19,7 @@ const template = ({ props, state, actions }: Params) => html`
     <div class="xxl-col-6">
       <${FamButton}>
         <slot target="content">
-        <span type="secondary-hole-disabled" onClick=${props?.onCancel?.()}>
+        <span type="secondary-hole-disabled" onClick=${actions.cancel}>
           <i>Cancelar</i>
         </span>
         </slot>
@@ -28,17 +28,18 @@ const template = ({ props, state, actions }: Params) => html`
     <div class="xxl-col-6">
       <${FamButton}>
         <slot target="content">
-          <span type="primary" onClick=${(event: MouseEvent) => props?.onSave?.(event)}>
+          <span type="primary" onClick=${actions.saveForm}>
             <i>Salvar</i>
           </span>
         </slot>
-      </>
+      </> 
     </div>
-  </div>
+  </div> 
 </div>
+
 `;
 
-export const FormCreateStationUi = ({ props }: Params) => {
+export const FormCreateUi = ({props}: Params) => {
   const state = createState({
     value: props?.inputValue || "",
     show: true,
@@ -58,22 +59,23 @@ export const FormCreateStationUi = ({ props }: Params) => {
 };
 
 const styles = () => css`
-  form-create-station-ui {
+  form-create-ui {
     display: flex;
     justify-content: flex-end;
     height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.1);
-    transition: ease-in 2s;
+    transition: ease-in-out 0.5s;
     position: absolute;
     top: 0;
-    left: 0;
+    right:-5000px;
     opacity: 0;
     z-index: -1;
   }
 
-  form-create-station-ui.show {
+  form-create-ui.show {
     opacity: 1;
+    right:0;
     z-index: 100;
   }
   .wrap-ctx {

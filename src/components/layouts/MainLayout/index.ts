@@ -1,13 +1,18 @@
 import { css, html } from "iares";
 
-import { SidebarUi, HeaderUi } from "@/components/ui";
+import { SidebarUi, HeaderUi, FormCreateUi } from "@/components/ui";
+import { uiEventDrive } from "@/services/eventDrive";
 
 const template = () => html`
   <div class="sidebar-ctx">
     <${SidebarUi} />
   </div>
   <div class="header-ctx">
-    <${HeaderUi} />
+    <${HeaderUi} eventDrive=${uiEventDrive} />
+    <${FormCreateUi}
+      value=""
+      eventDrive=${uiEventDrive} 
+    />
   </div>
   <div class="content-ctx">
     <router-view></router-view>

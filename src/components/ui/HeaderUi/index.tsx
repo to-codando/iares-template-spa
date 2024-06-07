@@ -1,22 +1,35 @@
-import { FamContainer } from "fam-code-ui";
-import { css, html } from "iares";
-import { ButtonUi } from "./ButtonUi";
-import { SearchUi } from "./SearchUi";
+import { FamContainer } from 'fam-code-ui';
+import { css, html } from 'iares';
+import { ButtonUi } from '@/components/ui';
+import { SearchUi } from './SearchUi';
+import type { Params } from './types';
 
-const template = () => html`
+const template = ({ props }: Params) => html`
   <${FamContainer}>
     <slot target="content" ctx="header-ui">
       <div class="content-ctx">
         <div class="menu-ctx">
-          <${ButtonUi} icon="menu" />
+          <${ButtonUi}
+            icon="menu"
+            emitter=${props.eventDrive}
+            eventName="toggle-sidebar-menu"
+          />
         </div>
         <div class="search-ctx">
           <${SearchUi} />
         </div>
         <div class="control-ctx">
           <div class="buttons">
-            <${ButtonUi} icon="delete" />
-            <${ButtonUi} icon="add"/>
+            <${ButtonUi}
+              icon="delete"
+              emitter=${props.eventDrive}
+              eventName="remove-charging-stations"
+            />
+            <${ButtonUi}
+              icon="add"
+              emitter=${props.eventDrive}
+              eventName="show-charging-station-form"
+            />
           </div>
         </div>
       </div>
@@ -24,14 +37,18 @@ const template = () => html`
   <//>
 `;
 
-export const HeaderUi = () => {
+export const HeaderUi = ({ props }: Params) => {
   return {
     template,
     styles,
+    props,
   };
 };
 
 const styles = () => css`
+  .xpto {
+    color: red;
+  }
   header-ui {
     display: flex;
     align-items: center;

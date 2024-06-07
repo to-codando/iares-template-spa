@@ -1,7 +1,7 @@
-import { html, css } from "iares";
-import { AvatarUi } from "./AvatarUi";
-import { MenuLinkUi } from "./MenuLinkUi";
-import { LogoutUi } from "./LogoutUi";
+import {html, css} from "iares";
+import {AvatarUi} from "./AvatarUi";
+import {MenuLinkUi} from "./MenuLinkUi";
+import {LogoutUi} from "./LogoutUi";
 
 const template = () => html`
   <div class="avatar-ctx">

@@ -9,7 +9,7 @@ export const eventFactory = () => {
   const unsubscribe = (eventName: string, handler: THandler) => {
     eventDrive.off({ eventName, handler });
   };
-  const dispatch = <T>(eventName: string, payload: TGenericObject<T>) => {
+  const dispatch = <T = void>(eventName: string, payload: TGenericObject<T>) => {
     eventDrive.emit(eventName, payload);
   };
 

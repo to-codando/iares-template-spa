@@ -3,7 +3,9 @@
  "linter": {
   "enabled": true,
   "rules": {
-   "recommended": true
+   "recommended": true,
+    "biome.semicolons": "asNeeded",
+    "biome.trailingCommas": "all"
   }
  },
  "formatter": {
